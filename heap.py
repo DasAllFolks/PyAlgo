@@ -29,4 +29,5 @@ class Heap(object):
 
   @property
   def size(self):
+    """Returns a nonnegative integer giving number of elements in the heap."""
     return len(self.__heap)
