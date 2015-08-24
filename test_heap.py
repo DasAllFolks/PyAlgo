@@ -27,9 +27,13 @@ class TestPoll(unittest.TestCase):
     with self.assertRaises(ValueError):
       heap.Heap().poll()
 
-  def test_one_element(self):
-    """Polling a heap with one element should return that element's value."""
+  def test_one_node(self):
+    """Polling a heap with one node should return that node's value."""
     self.assertEqual(heap.Heap([1]).poll(), 1)
+
+  def test_multiple_nodes(self):
+    """Polling a heap with many nodes should return the root node's value."""
+    self.assertEqual(heap.Heap([6, None, 'fred']), 6)
 
 
 class TestPop(unittest.TestCase):
