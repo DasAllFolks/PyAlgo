@@ -9,10 +9,15 @@ import heap
 class TestInit(unittest.TestCase):
   """Tests creation of a new heap."""
 
-  def test_created_empty(self):
+  def test_create_empty(self):
     """By default, a new heap should be created empty."""
     h = heap.Heap()
     self.assertEqual(h.size, 0)
+
+  def test_create_with_nodes(self):
+    """We should be able to create a heap pre-seeded with nodes."""
+    h = heap.Heap([6, None, 'fred'])
+    self.assertEqual(h.size, 3)
 
 
 class TestPoll(unittest.TestCase):
