@@ -21,7 +21,15 @@ class TestPoll(unittest.TestCase):
   I.e., where by "polling," we mean examining the value of the heap's root
   element WITHOUT removing it or otherwise altering the heap's state in any way.
   """
-  pass
+
+  def test_empty(self):
+    """Polling an empty heap should raise a ValueError."""
+    with self.assertRaises(ValueError):
+      heap.Heap().poll()
+
+  def test_one_element(self):
+    """Polling a heap with one element should return that element's value."""
+    self.assertEqual(heap.Heap([1]).poll(), 1)
 
 
 class TestPop(unittest.TestCase):
