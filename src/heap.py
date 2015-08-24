@@ -9,11 +9,12 @@ class Heap(object):
 
   __heap = []
 
-  def __init__(self, initial=[]):
+  def __init__(self, initial=None):
     """Creates a new heap.
 
     Args:
       initial: (Optional): A continguous array containing the data with which to
         initialize the new heap.
     """
-    self.__heap = []
+    if isinstance(initial, list) or isinstance(initial, tuple):
+      self.__heap = initial
