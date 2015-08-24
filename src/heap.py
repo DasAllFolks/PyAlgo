@@ -13,8 +13,11 @@ class Heap(object):
     """Creates a new heap.
 
     Args:
-      initial: (Optional): A continguous array containing the data with which to
+      initial: (Optional): A continguous list containing the data with which to
         initialize the new heap.
     """
     if isinstance(initial, list) or isinstance(initial, tuple):
       self.__heap = initial
+    elif initial is not None:
+      raise TypeError(
+        'Illegal type submitted for heap data; use a list or tuple instead.')
