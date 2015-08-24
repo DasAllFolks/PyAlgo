@@ -14,4 +14,6 @@ class TestHeap(unittest.TestCase):
     h = heap.Heap()
     self.assertEqual(h.size, 0)
     with self.assertRaises(ValueError):
+      h.poll()
+    with self.assertRaises(ValueError):
       h.pop()
