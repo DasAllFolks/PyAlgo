@@ -7,7 +7,7 @@ the best thing to use in a production setting...
 
 ## Testing
 
-TODO
+Use either `py.test` or `nosetests` from the root directory.
 
 ## License
 
