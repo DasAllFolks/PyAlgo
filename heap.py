@@ -35,7 +35,7 @@ class Heap(object):
     """
     try:
       return self.__heap[0]
-    except KeyError:
+    except IndexError:
       raise ValueError('Heap is empty')
 
   @property
