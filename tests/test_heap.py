@@ -1,6 +1,6 @@
 import unittest
 
-from algo import heap
+import heap
 
 
 class TestHeap(unittest.TestCase):
