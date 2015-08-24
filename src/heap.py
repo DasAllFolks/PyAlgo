@@ -4,7 +4,7 @@
 class Heap(object):
   """Implements a heap data structure in Python.
 
-  The underlying data structure used to hold the data is an array.
+  The underlying data structure used to hold the data is a list.
   """
 
   __heap = []
@@ -21,3 +21,8 @@ class Heap(object):
     elif initial is not None:
       raise TypeError(
         'Illegal type submitted for heap data; use a list or tuple instead.')
+
+  def __unicode__(self):
+    if not self.__heap:
+      return 'Empty'
+    return 'Root: %s' % self.__heap[0]
