@@ -33,7 +33,7 @@ class TestPoll(unittest.TestCase):
 
   def test_multiple_nodes(self):
     """Polling a heap with many nodes should return the root node's value."""
-    self.assertEqual(heap.Heap([6, None, 'fred']), 6)
+    self.assertEqual(heap.Heap([6, None, 'fred']).poll(), 6)
 
 
 class TestPop(unittest.TestCase):
