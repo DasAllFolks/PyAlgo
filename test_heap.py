@@ -13,10 +13,6 @@ class TestInit(unittest.TestCase):
     """By default, a new heap should be created empty."""
     h = heap.Heap()
     self.assertEqual(h.size, 0)
-    with self.assertRaises(ValueError):
-      h.poll()
-    with self.assertRaises(ValueError):
-      h.pop()
 
 
 class TestPoll(unittest.TestCase):
@@ -29,3 +25,10 @@ class TestPoll(unittest.TestCase):
 
 
 class TestPop(unittest.TestCase):
+  """Tests our ability to remove the top element from the heap."""
+  pass
+
+
+class TestPush(unittest.TestCase):
+  """Tests our ability to push a new element onto the heap."""
+  pass
