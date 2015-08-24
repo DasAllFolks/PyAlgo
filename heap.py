@@ -7,7 +7,7 @@ class Heap(object):
   The underlying data structure used to hold the data is a list.
   """
 
-  __heap = []
+  _heap = []
 
   def __init__(self, initial=None):
     """Creates a new heap.
@@ -17,12 +17,12 @@ class Heap(object):
         initialize the new heap.
     """
     if isinstance(initial, list) or isinstance(initial, tuple):
-      self.__heap = initial
+      self._heap = initial
     elif initial is not None:
       raise TypeError(
         'Illegal type submitted for heap data; use a list or tuple instead.')
 
   def __unicode__(self):
-    if not self.__heap:
+    if not self._heap:
       return 'Empty'
     return 'Root: %s' % self.__heap[0]
