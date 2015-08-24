@@ -1,9 +1,10 @@
 import unittest
 
+import heap
 
-class TestTest(unittest.TestCase):
-  def test_succeeds(self):
-    self.assertTrue(True)
 
-  def test_fails(self):
-    self.assertFalse(True)
+class TestHeap(unittest.TestCase):
+  """Tests the heap data structure."""
+
+  def test_push_onto_empty_heap(self):
+    pass
