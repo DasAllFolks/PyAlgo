@@ -27,6 +27,17 @@ class Heap(object):
       return 'Empty'
     return 'Root: %s' % self.__heap[0]
 
+  def poll(self):
+    """Gets the value of the heap's root node WITHOUT removing it.
+
+    Raises:
+      ValueError:  If the heap is empty.
+    """
+    try:
+      return self.__heap[0]
+    except KeyError:
+      raise ValueError('Heap is empty')
+
   @property
   def size(self):
     """Returns a nonnegative integer giving number of elements in the heap."""
