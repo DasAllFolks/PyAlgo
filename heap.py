@@ -26,3 +26,7 @@ class Heap(object):
     if not self.__heap:
       return 'Empty'
     return 'Root: %s' % self.__heap[0]
+
+  @property
+  def size(self):
+    return len(self.__heap)
