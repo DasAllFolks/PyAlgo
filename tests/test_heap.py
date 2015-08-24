@@ -1,7 +1,5 @@
 import unittest
 
-from algo import heap
-
 
 class TestHeap(unittest.TestCase):
   """Tests the heap data structure."""
