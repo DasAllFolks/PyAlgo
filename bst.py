@@ -41,6 +41,7 @@ class BinarySearchTree(object):
     """
     if not self._root:
       self._root = _Node(value)
+      return True
     return self.__insert(value, self._root)
 
   @property
