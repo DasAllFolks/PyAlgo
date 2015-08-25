@@ -9,22 +9,17 @@ import bst
 class TestDelete(unittest.TestCase):
   """Tests deletion of nodes from BST."""
 
-  def test_empty_tree(self):
-    tree = bst.BinarySearchTree()
-    self.assertFalse(tree.delete(1))
-    self.assertEqual(tree.size, 0)
-
-  def test_nonempty_tree_key_not_found(self):
-    tree = bst.BinarySearchTree([4, 5, 2, 1, 3])
-    self.assertFalse(tree.delete(6))
-    self.assertEqual(tree.size, 5)
+  def test_key_not_found(self):
+    root = bst.BinaryNode.build_bst([4, 5, 2, 1, 3])
+    new_root, result = root.delete(6)
+    self.assertEqual(root, new_root)
+    self.assertFalse(result)
 
   def test_tree_has_one_node_and_key_is_root(self):
-    tree = bst.BinarySearchTree(['fred'])
-    self.assertTrue(tree.delete('fred'))
-    self.assertEqual(tree.size, 0)
-    with self.assertRaises(ValueError):
-      tree.root
+    root = bst.BinaryNode('fred')
+    root, result = root.delete('fred')
+    self.assertIsNone(root)
+    self.assertTrue(result)
 
   # XXXX: Finish these.
 
