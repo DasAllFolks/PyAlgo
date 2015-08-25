@@ -12,6 +12,13 @@ class TestBuild(unittest.TestCase):
   def test_no_args(self):
     self.assertIsNone(bst.BinaryNode.build())
 
+  def test_one_arg(self):
+    self.assertEqual(bst.BinaryNode.build(3).inorder, [3])
+
+  def test_multiple_args(self):
+    root = bst.BinaryNode.build(4, 5, 2, 1, 3)
+    self.assertEqual(root.inorder, [1, 2, 3, 4, 5])
+
 
 class TestDelete(unittest.TestCase):
   """Tests deletion of nodes from BST."""
