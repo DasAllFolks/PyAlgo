@@ -11,7 +11,7 @@ class TestInit(unittest.TestCase):
 
   def test_empty_by_default(self):
     """By default, a new binary search tree should be created empty."""
-    tree = bst.binarySearchTree()
+    tree = bst.BinarySearchTree()
     self.assertEqual(tree.size, 0)
     self.assertEqual(tree.preorder, [])
     self.assertEqual(tree.inorder, [])
