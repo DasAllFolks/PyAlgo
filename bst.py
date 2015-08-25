@@ -32,6 +32,14 @@ class BinarySearchTree(object):
     for datum in (data or []):
       self.insert(datum)
 
+  def delete(self, value):
+    """Deletes a given value from the tree if it exists.
+
+    Returns True if the value was successfully deleted, False if it wasn't
+    found in the BST.
+    """
+    return False
+
   @property
   def inorder(self):
     """Returns values of all nodes in order, as a list.
