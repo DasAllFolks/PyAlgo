@@ -31,6 +31,11 @@ class TestInorder(unittest.TestCase):
     """A BST with just a root should return a singleton list."""
     self.assertEqual(bst.BinarySearchTree(['fred']).inorder, ['fred'])
 
+  def test_multiple_nodes(self):
+    """A BST with multiple nodes in any order should return them in order."""
+    tree = bst.BinarySearchTree([4, 2, 1, 3])
+    self.assertEqual(tree, [1, 2, 3, 4])
+
 
 class TestInsert(unittest.TestCase):
   """Tests insertion into a binary search tree."""
