@@ -28,3 +28,14 @@ class BinarySearchTree(object):
     """
     for datum in (data or []):
       self.insert(datum)
+
+  @property
+  def root(self):
+    """Returns the value of the root node.
+
+    If BST is empty, raises a ValueError (i.e., there's no root node to query).
+    """
+    try:
+      return self._root.value
+    except AttributeError:
+      raise ValueError('Tree is empty; no root node to query.')
