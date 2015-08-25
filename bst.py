@@ -59,9 +59,7 @@ class BinaryNode(object):
     Returns True if the value was successfully inserted, False otherwise (e.g.,
     probably because the value duplicated an existing value in the BST).
     """
-    result = self.__insert(value, self)
-    self._size += int(result)
-    return result
+    return self.__insert(value, self)
 
   @property
   def postorder(self):
@@ -113,12 +111,14 @@ class BinaryNode(object):
     if value < root.value:
       if not root.left:
         root.left = BinaryNode(value)
+        root._size += 1
         return True
       return self.__insert(value, root.left)
 
     if value > root.value:
       if not root.right:
         root.right = BinaryNode(value)
+        root._size += 1
         return True
       return self.__insert(value, root.right)
 
