@@ -81,18 +81,9 @@ class BinarySearchTree(object):
     probably because the value duplicated an existing value in the BST).
     """
     if not root:
-      return self._Node(value)
-
+      return self._Node(value), True
     if value < root.value:
-      if not root.left:
-        root.left = self._Node(value)
-        return True
       return self.__insert(value, root.left)
-
     if value > root.value:
-      if not root.right:
-        root.right = self._Node(value)
-        return True
       return self.__insert(value, root.right)
-
-    return False
+    return root, False
