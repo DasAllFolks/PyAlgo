@@ -6,17 +6,11 @@ import unittest
 import bst
 
 
-class TestBuildBST(unittest.TestCase):
+class TestBuild(unittest.TestCase):
   """Tests method for bulk building a BST."""
 
-  def test_none(self):
-    self.assertIsNone(bst.BinaryNode.build_bst(None))
-
-  def test_empty_list(self):
-    self.assertIsNone(bst.BinaryNode.build_bst([]))
-
-  def test_empty_tuple(self):
-    self.assertIsNone(bst.BinaryNode.build_bst(()))
+  def test_no_args(self):
+    self.assertIsNone(bst.BinaryNode.build())
 
 
 class TestDelete(unittest.TestCase):
