@@ -54,6 +54,13 @@ class TestInsert(unittest.TestCase):
     self.assertEqual(tree.size, 1)
     self.assertEqual(tree.root, 1)
 
+  def test_insert_duplicate_leaf(self):
+    """Leaves can't be duplicated either."""
+    tree = bst.BinarySearchTree([1, 2])
+    self.assertFalse(tree.insert(2))
+    self.assertEqual(tree.size, 2)
+    self.assertEqual(tree.root, 1)
+
   def test_insert_left(self):
     tree = bst.BinarySearchTree([2])
     self.assertTrue(tree.insert(1))
