@@ -153,3 +153,7 @@ class TestSearch(unittest.TestCase):
   def test_tree_has_multiple_nodes_and_key_is_leaf(self):
     tree = bst.BinarySearchTree([4, 5, 2, 1, 3])
     self.assertTrue(tree.search(5))
+
+  def test_tree_has_multiple_nodes_and_key_is_neither_root_nor_leaf(self):
+    tree = bst.BinarySearchTree([4, 5, 2, 1, 3])
+    self.assertTrue(tree.search(2))
