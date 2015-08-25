@@ -61,5 +61,16 @@ class BinarySearchTree(object):
     Returns True if the value was successfully inserted, False otherwise (e.g.,
     probably because the value duplicated an existing value in the BST).
     """
-    if not root:
-      pass
+    if value < root.value:
+      if not root.left:
+        root.left = _Node(value)
+        return True
+      return self.__insert(value, root.left)
+
+    if value > root.value:
+      if not root.right:
+        root.right = _Node(value)
+        return True
+      return self.__insert(value, root.right)
+
+    return False
