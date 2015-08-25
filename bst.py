@@ -38,7 +38,7 @@ class BinarySearchTree(object):
     Returns True if the value was successfully deleted, False if it wasn't
     found in the BST.
     """
-    return False
+    return self.__delete(value, self._root)
 
   @property
   def inorder(self):
@@ -93,6 +93,14 @@ class BinarySearchTree(object):
   def size(self):
     """Returns the number of elements in the BST as an int."""
     return self._size
+
+  def __delete(self, value, root):
+    """Deletes a given value from the given subtreeree if it exists.
+
+    Returns True if the value was successfully deleted, False if it wasn't
+    found in the BST.
+    """
+    return self.__delete(value, self._root)
 
   def __inorder(self, root):
     """Returns values of all nodes in a subtree in order, as a list.
