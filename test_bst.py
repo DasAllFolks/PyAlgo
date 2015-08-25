@@ -38,7 +38,7 @@ class TestInorder(unittest.TestCase):
 
   def test_multiple_nodes2(self):
     tree = bst.BinarySearchTree([4, 5, 2, 1, 3])
-    self.assertEqual(tree.postorder, [1, 2, 3, 4, 5])
+    self.assertEqual(tree.inorder, [1, 2, 3, 4, 5])
 
 
 class TestInsert(unittest.TestCase):
