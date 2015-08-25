@@ -46,3 +46,17 @@ class TestInsert(unittest.TestCase):
     self.assertTrue(tree.insert(42))
     self.assertEqual(tree.size, 1)
     self.assertEqual(tree.root, 42)
+
+  def test_insert_left(self):
+    tree = bst.BinarySearchTree([2])
+    self.assertTrue(tree.insert(1))
+    self.assertEqual(tree.size, 2)
+    self.assertEqual(tree.root, 2)
+    self.assertEqual(tree.inorder, [1, 2])
+
+  def test_insert_right(self):
+    tree = bst.BinarySearchTree([2])
+    self.assertTrue(tree.insert(3))
+    self.assertEqual(tree.size, 2)
+    self.assertEqual(tree.root, 2)
+    self.assertEqual(tree.inorder, [2, 3])
