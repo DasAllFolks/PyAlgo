@@ -77,6 +77,10 @@ class BinarySearchTree(object):
     except AttributeError:
       raise ValueError('Tree is empty; no root node to query.')
 
+  def search(self, value):
+    """Returns True if value is found in BST, False otherwise."""
+    pass
+
   @property
   def size(self):
     """Returns the number of elements in the BST as an int."""
