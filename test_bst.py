@@ -14,6 +14,7 @@ class TestDelete(unittest.TestCase):
     new_root, result = root.delete(6)
     self.assertEqual(root, new_root)
     self.assertFalse(result)
+    self.assertEqual(new_root.size, 5)
 
   def test_tree_has_one_node_and_key_is_root(self):
     root = bst.BinaryNode('fred')
@@ -27,15 +28,10 @@ class TestDelete(unittest.TestCase):
 class TestInit(unittest.TestCase):
   """Tests creation of a new binary search tree."""
 
-  def test_empty_by_default(self):
-    """By default, a new binary search tree should be created empty."""
-    tree = bst.BinarySearchTree()
-    with self.assertRaises(ValueError):
-      tree.root
-    self.assertEqual(tree.size, 0)
-    self.assertEqual(tree.preorder, [])
-    self.assertEqual(tree.inorder, [])
-    self.assertEqual(tree.postorder, [])
+  def test_new_bst(self):
+    """By default, a new binary search tree should consist of just a root."""
+    root = bst.BinaryNode('blah')
+    self.assertEqual(root.size, 1)
 
 
 class TestInorder(unittest.TestCase):
