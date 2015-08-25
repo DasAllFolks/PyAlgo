@@ -19,6 +19,13 @@ class TestDelete(unittest.TestCase):
     self.assertFalse(tree.delete(6))
     self.assertEqual(tree.size, 5)
 
+  def test_tree_has_one_node_and_key_is_root(self):
+    tree = bst.BinarySearchTree(['fred'])
+    self.assertTrue(tree.delete('fred'))
+    self.assertEqual(tree.size, 0)
+    with self.assertRaises(ValueError):
+      tree.root
+
 
 class TestInit(unittest.TestCase):
   """Tests creation of a new binary search tree."""
