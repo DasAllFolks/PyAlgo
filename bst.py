@@ -6,6 +6,8 @@ class BinarySearchTree(object):
 
   This BST does not do any kind of balancing, and thus can degenerate into a
   linked list in the worst case.
+
+  This BST also does NOT permit duplicates.
   """
 
   class _Node(object):
@@ -28,6 +30,14 @@ class BinarySearchTree(object):
     """
     for datum in (data or []):
       self.insert(datum)
+
+  def insert(self, value):
+    """Inserts a new value into the BST (without rebalancing the tree).
+
+    Returns True if the value was successfully inserted, False otherwise (e.g.,
+    probably because the value duplicated an existing value in the BST).
+    """
+    pass
 
   @property
   def root(self):
