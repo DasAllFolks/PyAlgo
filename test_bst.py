@@ -20,6 +20,14 @@ class TestInit(unittest.TestCase):
     self.assertEqual(tree.postorder, [])
 
 
+class TestInorder(unittest.TestCase):
+  """Tests in-order traversal of binary search tree."""
+
+  def test_empty_tree(self):
+    """An empty BST should produce empty list as in-order traversal output."""
+    self.assertEqual(bst.BinarySearchTree().inorder, [])
+
+
 class TestInsert(unittest.TestCase):
   """Tests insertion into a binary search tree."""
 
