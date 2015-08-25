@@ -38,7 +38,7 @@ class BinarySearchTree(object):
 
     For an empty BST, this returns an empty list.
     """
-    pass
+    return self.__inorder(self._root)
 
   def insert(self, value):
     """Inserts a new value into the BST (without rebalancing the tree).
@@ -67,6 +67,16 @@ class BinarySearchTree(object):
   def size(self):
     """Returns the number of elements in the BST as an int."""
     return self._size
+
+  def __inorder(self, root):
+    """Returns values of all nodes in a subtree in order, as a list.
+
+    For an empty subtree (defined by a root of None), this returns an empty
+    list.
+    """
+    if not root:
+      return []
+    return self.__inorder(root.left) + [root.value] + self.__inorder(root.right)
 
   def __insert(self, value, root):
     """Attempts to insert the given value into the subtree with the given root.
