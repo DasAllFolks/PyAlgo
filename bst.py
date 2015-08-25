@@ -15,6 +15,8 @@ class BinarySearchTree(object):
     left = None
     right = None
 
+  root = None
+
   def __init__(self, data=None):
     """Creates a new binary search tree.
 
@@ -22,4 +24,5 @@ class BinarySearchTree(object):
       data: An optional tuple or list containing data to be inserted IN ORDER
       into the BST.  If not supplied, the BST is created empty.
     """
-    pass
+    for datum in (data or []):
+      self.insert(datum)
