@@ -47,6 +47,7 @@ class BinarySearchTree(object):
     probably because the value duplicated an existing value in the BST).
     """
     self._root, result = self.__insert(value, self._root)
+    self._size += int(result)
     return result
 
   @property
