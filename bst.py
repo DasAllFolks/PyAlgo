@@ -32,6 +32,14 @@ class BinarySearchTree(object):
     for datum in (data or []):
       self.insert(datum)
 
+  @property
+  def inorder(self):
+    """Returns values of all nodes in order, as a list.
+
+    For an empty BST, this returns an empty list.
+    """
+    pass
+
   def insert(self, value):
     """Inserts a new value into the BST (without rebalancing the tree).
 
