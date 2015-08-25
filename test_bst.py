@@ -72,18 +72,18 @@ class TestInsert(unittest.TestCase):
     self.assertEqual(root.value, 1)
 
   def test_insert_left(self):
-    tree = bst.BinarySearchTree([2])
-    self.assertTrue(tree.insert(1))
-    self.assertEqual(tree.size, 2)
-    self.assertEqual(tree.root, 2)
-    self.assertEqual(tree.inorder, [1, 2])
+    root = bst.BinaryNode(2)
+    self.assertTrue(root.insert(1))
+    self.assertEqual(root.size, 2)
+    self.assertEqual(root.value, 2)
+    self.assertEqual(root.inorder, [1, 2])
 
   def test_insert_right(self):
-    tree = bst.BinarySearchTree([2])
-    self.assertTrue(tree.insert(3))
-    self.assertEqual(tree.size, 2)
-    self.assertEqual(tree.root, 2)
-    self.assertEqual(tree.inorder, [2, 3])
+    root = bst.BinaryNode(2)
+    self.assertTrue(root.insert(3))
+    self.assertEqual(root.size, 2)
+    self.assertEqual(root.value, 2)
+    self.assertEqual(root.inorder, [2, 3])
 
 
 class TestPreorder(unittest.TestCase):
