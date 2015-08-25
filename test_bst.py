@@ -39,20 +39,20 @@ class TestInorder(unittest.TestCase):
 
   def test_empty_tree(self):
     """An empty BST should produce empty list as in-order traversal output."""
-    self.assertEqual(bst.BinarySearchTree().inorder, [])
+    self.assertEqual(None, [])
 
   def test_single_node(self):
     """A BST with just a root should return a singleton list."""
-    self.assertEqual(bst.BinarySearchTree(['fred']).inorder, ['fred'])
+    self.assertEqual(bst.BinaryNode('fred').inorder, ['fred'])
 
   def test_multiple_nodes(self):
     """A BST with multiple nodes in any order should return them in order."""
-    tree = bst.BinarySearchTree([4, 2, 1, 3])
-    self.assertEqual(tree.inorder, [1, 2, 3, 4])
+    root = bst.BinaryNode.build_bst([4, 2, 1, 3])
+    self.assertEqual(root.inorder, [1, 2, 3, 4])
 
   def test_multiple_nodes2(self):
-    tree = bst.BinarySearchTree([4, 5, 2, 1, 3])
-    self.assertEqual(tree.inorder, [1, 2, 3, 4, 5])
+    root = bst.BinaryNode.build_bst([4, 5, 2, 1, 3])
+    self.assertEqual(root.inorder, [1, 2, 3, 4, 5])
 
 
 class TestInsert(unittest.TestCase):
