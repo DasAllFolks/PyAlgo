@@ -6,6 +6,20 @@ import unittest
 import bst
 
 
+class TestDelete(unittest.TestCase):
+  """Tests deletion of nodes from BST."""
+
+  def test_empty_tree(self):
+    tree = bst.BinarySearchTree()
+    self.assertFalse(tree.delete(1))
+    self.assertEqual(tree.size, 0)
+
+  def test_nonempty_tree_key_not_found(self):
+    tree = bst.BinarySearchTree([4, 5, 2, 1, 3])
+    self.assertFalse(tree.delete(6))
+    self.assertEqual(tree.size, 5)
+
+
 class TestInit(unittest.TestCase):
   """Tests creation of a new binary search tree."""
 
