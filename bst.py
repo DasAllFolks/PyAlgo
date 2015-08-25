@@ -50,11 +50,8 @@ class BinaryNode(object):
 
   @property
   def inorder(self):
-    """Returns values of all nodes in order, as a list.
-
-    For an empty BST, this returns an empty list.
-    """
-    return self.__inorder(self._root)
+    """Returns values of BST's nodes in order, as a list."""
+    return self.__inorder(self)
 
   def insert(self, value):
     """Inserts a new value into the BST (without rebalancing the tree).
