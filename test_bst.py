@@ -58,26 +58,18 @@ class TestInorder(unittest.TestCase):
 class TestInsert(unittest.TestCase):
   """Tests insertion into a binary search tree."""
 
-  def test_insert_into_empty_tree(self):
-    """Anything inserted into an empty BST should become root."""
-    tree = bst.BinarySearchTree()
-    self.assertTrue(tree.insert(42))
-    self.assertEqual(tree.size, 1)
-    self.assertEqual(tree.root, 42)
-
   def test_insert_duplicate_root(self):
     """A tree will not permit duplicates to be inserted."""
-    tree = bst.BinarySearchTree([1])
-    self.assertFalse(tree.insert(1))
-    self.assertEqual(tree.size, 1)
-    self.assertEqual(tree.root, 1)
+    root = bst.BinaryNode(1)
+    self.assertFalse(root.insert(1))
+    self.assertEqual(root.size, 1)
 
   def test_insert_duplicate_leaf(self):
     """Leaves can't be duplicated either."""
-    tree = bst.BinarySearchTree([1, 2])
-    self.assertFalse(tree.insert(2))
-    self.assertEqual(tree.size, 2)
-    self.assertEqual(tree.root, 1)
+    root = bst.BinaryNode.build_bst([1, 2])
+    self.assertFalse(root.insert(2))
+    self.assertEqual(root.size, 2)
+    self.assertEqual(root.value, 1)
 
   def test_insert_left(self):
     tree = bst.BinarySearchTree([2])
