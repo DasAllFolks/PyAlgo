@@ -40,7 +40,7 @@ class BinarySearchTree(object):
     probably because the value duplicated an existing value in the BST).
     """
     if not self._root:
-      self._root = _Node(value)
+      self._root = self._Node(value)
       return True
     return self.__insert(value, self._root)
 
@@ -63,13 +63,13 @@ class BinarySearchTree(object):
     """
     if value < root.value:
       if not root.left:
-        root.left = _Node(value)
+        root.left = self._Node(value)
         return True
       return self.__insert(value, root.left)
 
     if value > root.value:
       if not root.right:
-        root.right = _Node(value)
+        root.right = self._Node(value)
         return True
       return self.__insert(value, root.right)
 
