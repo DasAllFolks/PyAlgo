@@ -36,6 +36,10 @@ class TestInorder(unittest.TestCase):
     tree = bst.BinarySearchTree([4, 2, 1, 3])
     self.assertEqual(tree.inorder, [1, 2, 3, 4])
 
+  def test_multiple_nodes2(self):
+    tree = bst.BinarySearchTree([4, 5, 2, 1, 3])
+    self.assertEqual(tree.postorder, [1, 2, 3, 4, 5])
+
 
 class TestInsert(unittest.TestCase):
   """Tests insertion into a binary search tree."""
@@ -87,6 +91,10 @@ class TestPreorder(unittest.TestCase):
     """A BST with just a root should return a singleton list."""
     self.assertEqual(bst.BinarySearchTree(['fred']).preorder, ['fred'])
 
+  def test_multiple_nodes(self):
+    tree = bst.BinarySearchTree([4, 5, 2, 1, 3])
+    self.assertEqual(tree.preorder, [4, 2, 1, 3, 5])
+
 
 class TestPostorder(unittest.TestCase):
   """Tests postorder traversal of binary search tree."""
@@ -98,3 +106,7 @@ class TestPostorder(unittest.TestCase):
   def test_single_node(self):
     """A BST with just a root should return a singleton list."""
     self.assertEqual(bst.BinarySearchTree(['fred']).postorder, ['fred'])
+
+  def test_multiple_nodes(self):
+    tree = bst.BinarySearchTree([4, 5, 2, 1, 3])
+    self.assertEqual(tree.postorder, [1, 3, 2, 5, 4])
