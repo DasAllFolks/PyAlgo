@@ -13,9 +13,11 @@ class BinarySearchTree(object):
   class _Node(object):
     """Represents a node in the binary search tree."""
 
-    value = None
     left = None
     right = None
+
+    def __init__(self, value):
+      self.value = value
 
   size = 0
 
@@ -37,7 +39,9 @@ class BinarySearchTree(object):
     Returns True if the value was successfully inserted, False otherwise (e.g.,
     probably because the value duplicated an existing value in the BST).
     """
-    pass
+    if not self._root:
+      self._root = _Node(value)
+    return self.__insert(value, self._root)
 
   @property
   def root(self):
@@ -49,3 +53,12 @@ class BinarySearchTree(object):
       return self._root.value
     except AttributeError:
       raise ValueError('Tree is empty; no root node to query.')
+
+  def __insert(self, value, root):
+    """Attempts to insert the given value into the subtree with the given root.
+
+    Returns True if the value was successfully inserted, False otherwise (e.g.,
+    probably because the value duplicated an existing value in the BST).
+    """
+    if not root:
+      pass
