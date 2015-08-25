@@ -24,15 +24,20 @@ class BinaryNode(object):
     self.right = None
     self._size = 1
 
-  def __init__(self, data=None):
-    """Creates a new binary search tree.
+  @classmethod
+  def build_bst(cls, data=None):
+    """Creates BST from a tuple or list of data to be inserted in order.
 
-    Args:
-      data: An optional tuple or list containing data to be inserted IN ORDER
-      into the BST.  If not supplied, the BST is created empty.
+    Returns the root BinaryNode of the new BST, or None if data was empty.
     """
-    for datum in (data or []):
-      self.insert(datum)
+    if not data:
+      return None
+
+    root = cls(data[0])
+    for value in data[1:]:
+      root.insert(value)
+
+    return root
 
   def delete(self, value):
     """Deletes a given value from the tree if it exists.
