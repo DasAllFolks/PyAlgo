@@ -27,6 +27,10 @@ class TestInorder(unittest.TestCase):
     """An empty BST should produce empty list as in-order traversal output."""
     self.assertEqual(bst.BinarySearchTree().inorder, [])
 
+  def test_single_node(self):
+    """A BST with just a root should return a singleton list."""
+    self.assertEqual(bst.BinarySearchTree(['fred']).inorder, ['fred'])
+
 
 class TestInsert(unittest.TestCase):
   """Tests insertion into a binary search tree."""
