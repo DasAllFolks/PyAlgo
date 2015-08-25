@@ -46,11 +46,7 @@ class BinarySearchTree(object):
     Returns True if the value was successfully inserted, False otherwise (e.g.,
     probably because the value duplicated an existing value in the BST).
     """
-    if not self._root:
-      self._root = self._Node(value)
-      self._size += 1
-      return True
-    return self.__insert(value, self._root)
+    self._root = self.__insert(value, self._root)
 
   @property
   def root(self):
@@ -84,6 +80,9 @@ class BinarySearchTree(object):
     Returns True if the value was successfully inserted, False otherwise (e.g.,
     probably because the value duplicated an existing value in the BST).
     """
+    if not root:
+      return _Node(value)
+
     if value < root.value:
       if not root.left:
         root.left = self._Node(value)
