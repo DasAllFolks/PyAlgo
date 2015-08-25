@@ -16,6 +16,7 @@ class BinarySearchTree(object):
     right = None
 
   root = None
+  size = 0
 
   def __init__(self, data=None):
     """Creates a new binary search tree.
