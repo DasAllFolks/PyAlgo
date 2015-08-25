@@ -11,10 +11,18 @@ class BinarySearchTree(object):
   """
 
   class _Node(object):
-    """Represents a node in the binary search tree."""
+    """Represents a node in the binary search tree.
+
+    Attrs:
+      value: The datum held by the node.
+      left: The left child of this node (or None, if node has no left child).
+      right: The right child of this node (or None, if node has no right child).
+      _size: The size of the subtree of which this node is the root.
+    """
 
     left = None
     right = None
+    _size = 1
 
     def __init__(self, value):
       self.value = value
