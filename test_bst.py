@@ -74,3 +74,27 @@ class TestInsert(unittest.TestCase):
     self.assertEqual(tree.size, 2)
     self.assertEqual(tree.root, 2)
     self.assertEqual(tree.inorder, [2, 3])
+
+
+class TestPreorder(unittest.TestCase):
+  """Tests preorder traversal of binary search tree."""
+
+  def test_empty_tree(self):
+    """An empty BST should produce empty list as preorder traversal output."""
+    self.assertEqual(bst.BinarySearchTree().preorder, [])
+
+  def test_single_node(self):
+    """A BST with just a root should return a singleton list."""
+    self.assertEqual(bst.BinarySearchTree(['fred']).preorder, ['fred'])
+
+
+class TestPostorder(unittest.TestCase):
+  """Tests postorder traversal of binary search tree."""
+
+  def test_empty_tree(self):
+    """An empty BST should produce empty list as postorder traversal output."""
+    self.assertEqual(bst.BinarySearchTree().preorder, [])
+
+  def test_single_node(self):
+    """A BST with just a root should return a singleton list."""
+    self.assertEqual(bst.BinarySearchTree(['fred']).postorder, ['fred'])
