@@ -26,6 +26,8 @@ class TestDelete(unittest.TestCase):
     with self.assertRaises(ValueError):
       tree.root
 
+  # XXXX: Finish these.
+
 
 class TestInit(unittest.TestCase):
   """Tests creation of a new binary search tree."""
