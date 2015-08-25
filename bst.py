@@ -25,18 +25,15 @@ class BinaryNode(object):
     self._size = 1
 
   @classmethod
-  def build_bst(cls, data=None):
-    """Creates BST from a tuple or list of data to be inserted in order.
+  def build(cls, *data):
+    """Creates BST from a list of data to be inserted in order.
 
     Returns the root BinaryNode of the new BST, or None if data was empty.
     """
     if not data:
       return None
-
     root = cls(data[0])
-    for value in data[1:]:
-      root.insert(value)
-
+    root.insert(data[1:])
     return root
 
   def delete(self, value):
