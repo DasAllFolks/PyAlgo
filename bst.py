@@ -35,10 +35,14 @@ class BinarySearchTree(object):
   def delete(self, value):
     """Deletes a given value from the tree if it exists.
 
-    Returns True if the value was successfully deleted, False if it wasn't
-    found in the BST.
+    If necessary, the root of the tree is updated (e.g., if it was the root
+    which was deleted).
+
+    Returns True if the value was successfully deleted, False if it wasn't found
+    in the BST.
     """
-    return self.__delete(value, self._root)
+    self._root, result = self.__delete(value, self._root)
+    return result
 
   @property
   def inorder(self):
@@ -100,6 +104,10 @@ class BinarySearchTree(object):
     Returns True if the value was successfully deleted, False if it wasn't
     found in the BST.
     """
+    if not root:
+      return False
+    if value < root.value:
+      return
     return self.__delete(value, self._root)
 
   def __inorder(self, root):
