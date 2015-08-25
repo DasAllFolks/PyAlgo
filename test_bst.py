@@ -133,3 +133,19 @@ class TestPostorder(unittest.TestCase):
   def test_multiple_nodes(self):
     tree = bst.BinarySearchTree([4, 5, 2, 1, 3])
     self.assertEqual(tree.postorder, [1, 3, 2, 5, 4])
+
+
+class TestSearch(unittest.TestCase):
+  """Tests ability to search for a given value within the BST."""
+
+  def test_empty_tree(self):
+    tree = bst.BinarySearchTree()
+    self.assertFalse(tree.search(1))
+
+  def test_nonempty_tree_key_not_found(self):
+    tree = bst.BinarySearchTree([4, 5, 2, 1, 3])
+    self.assertFalse(tree.search(6))
+
+  def test_tree_has_one_node_and_key_is_root(self):
+    tree = bst.BinarySearchTree(['fred'])
+    self.assertTrue(tree.search('fred'))
