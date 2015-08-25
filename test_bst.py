@@ -98,6 +98,18 @@ class TestInsert(unittest.TestCase):
     self.assertEqual(root.value, 2)
     self.assertEqual(root.inorder, [2, 3])
 
+  def test_bulk_insert(self):
+    root = bst.BinaryNode(4)
+    new_root, results = root.insert(5, 2, 1, 2, 3)
+    self.assertEqual(root, new_root)
+    self.assertEqual(root.size, 5)
+    self.assertTrue(results[0])
+    self.assertTrue(results[1])
+    self.assertTrue(results[2])
+    self.assertFalse(results[3])
+    self.assertTrue(results[4])
+    self.assertEqual(root.inorder, [1, 2, 3, 4, 5])
+
 
 class TestPreorder(unittest.TestCase):
   """Tests preorder traversal of binary search tree."""
