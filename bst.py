@@ -1,34 +1,28 @@
 # -*- coding: utf-8 -*-
 
 
-class BinarySearchTree(object):
-  """Implements a basic binary search tree in Python.
+class BinaryNode(object):
+  """Implements a node of a binary search tree in Python.
+
+  Any binary search tree, by means of recursion, can be fully specified using
+  its root BinaryNode. An empty BST can be represented using, simply, None.
 
   This BST does not do any kind of balancing, and thus can degenerate into a
   linked list in the worst case.
 
   This BST also does NOT permit duplicates.
+
+  Attrs:
+    value: The datum held by the node.
+    left: The left child of this node (or None, if node has no left child).
+    right: The right child of this node (or None, if node has no right child).
+    _size: The size of the BST of which this node is the root.
   """
-
-  class _Node(object):
-    """Represents a node in the binary search tree.
-
-    Attrs:
-      value: The datum held by the node.
-      left: The left child of this node (or None, if node has no left child).
-      right: The right child of this node (or None, if node has no right child).
-      _size: The size of the subtree of which this node is the root.
-    """
-
-    left = None
-    right = None
-    _size = 1
-
-    def __init__(self, value):
-      self.value = value
-
-  _root = None
-  _size = 0
+  def __init__(self, value):
+    self.value = value
+    self.left = None
+    self.right = None
+    self._size = 1
 
   def __init__(self, data=None):
     """Creates a new binary search tree.
