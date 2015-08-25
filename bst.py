@@ -79,7 +79,7 @@ class BinarySearchTree(object):
 
   def search(self, value):
     """Returns True if value is found in BST, False otherwise."""
-    pass
+    return self.__search(value, self._root)
 
   @property
   def size(self):
@@ -134,3 +134,13 @@ class BinarySearchTree(object):
       return []
     return (
       [root.value] + self.__preorder(root.left) + self.__preorder(root.right))
+
+  def __search(self, value, root):
+    """Returns True if value is found in subtree, False otherwise."""
+    if not root:
+      return False
+    if value < root.value:
+      return self.__search(value, root.left)
+    if value > root.value:
+      return self.__search(value, root.right)
+    return True
