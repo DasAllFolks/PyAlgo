@@ -84,8 +84,13 @@ class BinarySearchTree(object):
     """
     if not root:
       return self._Node(value), True
+
     if value < root.value:
-      return self.__insert(value, root.left)
+      root.left, result = self.__insert(value, root.left)
+      return root, result
+
     if value > root.value:
-      return self.__insert(value, root.right)
+      root.right, result = self.__insert(value, root.right)
+      return root, result
+
     return root, False
