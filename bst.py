@@ -59,7 +59,7 @@ class BinaryNode(object):
     Returns True if the value was successfully inserted, False otherwise (e.g.,
     probably because the value duplicated an existing value in the BST).
     """
-    self._root, result = self.__insert(value, self._root)
+    result = self.__insert(value, self)
     self._size += int(result)
     return result
 
