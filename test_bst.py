@@ -24,7 +24,7 @@ class TestDelete(unittest.TestCase):
   """Tests deletion of nodes from BST."""
 
   def test_key_not_found(self):
-    root = bst.BinaryNode.build_bst([4, 5, 2, 1, 3])
+    root = bst.BinaryNode.build(4, 5, 2, 1, 3)
     new_root, result = root.delete(6)
     self.assertEqual(root, new_root)
     self.assertFalse(result)
@@ -61,11 +61,11 @@ class TestInorder(unittest.TestCase):
 
   def test_multiple_nodes(self):
     """A BST with multiple nodes in any order should return them in order."""
-    root = bst.BinaryNode.build_bst([4, 2, 1, 3])
+    root = bst.BinaryNode.build(4, 2, 1, 3)
     self.assertEqual(root.inorder, [1, 2, 3, 4])
 
   def test_multiple_nodes2(self):
-    root = bst.BinaryNode.build_bst([4, 5, 2, 1, 3])
+    root = bst.BinaryNode.build(4, 5, 2, 1, 3)
     self.assertEqual(root.inorder, [1, 2, 3, 4, 5])
 
 
@@ -80,7 +80,7 @@ class TestInsert(unittest.TestCase):
 
   def test_insert_duplicate_leaf(self):
     """Leaves can't be duplicated either."""
-    root = bst.BinaryNode.build_bst([1, 2])
+    root = bst.BinaryNode.build(1, 2)
     self.assertFalse(root.insert(2))
     self.assertEqual(root.size, 2)
     self.assertEqual(root.value, 1)
@@ -120,7 +120,7 @@ class TestPreorder(unittest.TestCase):
     self.assertEqual(bst.BinaryNode('fred').preorder, ['fred'])
 
   def test_multiple_nodes(self):
-    root = bst.BinaryNode.build_bst([4, 5, 2, 1, 3])
+    root = bst.BinaryNode.build(4, 5, 2, 1, 3)
     self.assertEqual(root.preorder, [4, 2, 1, 3, 5])
 
 
@@ -132,7 +132,7 @@ class TestPostorder(unittest.TestCase):
     self.assertEqual(bst.BinaryNode('fred').postorder, ['fred'])
 
   def test_multiple_nodes(self):
-    root = bst.BinaryNode.build_bst([4, 5, 2, 1, 3])
+    root = bst.BinaryNode.build(4, 5, 2, 1, 3)
     self.assertEqual(root.postorder, [1, 3, 2, 5, 4])
 
 
@@ -140,7 +140,7 @@ class TestSearch(unittest.TestCase):
   """Tests ability to search for a given value within the BST."""
 
   def test_key_not_found(self):
-    root = bst.BinaryNode.build_bst([4, 5, 2, 1, 3])
+    root = bst.BinaryNode.build(4, 5, 2, 1, 3)
     self.assertFalse(root.search(6))
 
   def test_tree_has_one_node_and_key_is_root(self):
@@ -148,9 +148,9 @@ class TestSearch(unittest.TestCase):
     self.assertTrue(root.search('fred'))
 
   def test_tree_has_multiple_nodes_and_key_is_leaf(self):
-    root = bst.BinaryNode.build_bst([4, 5, 2, 1, 3])
+    root = bst.BinaryNode.build(4, 5, 2, 1, 3)
     self.assertFalse(root.search(5))
 
   def test_tree_has_multiple_nodes_and_key_is_neither_root_nor_leaf(self):
-    root = bst.BinaryNode.build_bst([4, 5, 2, 1, 3])
+    root = bst.BinaryNode.build(4, 5, 2, 1, 3)
     self.assertFalse(root.search(2))
