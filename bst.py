@@ -39,12 +39,10 @@ class BinaryNode(object):
   def delete(self, value):
     """Deletes a given value from the tree if it exists.
 
-    If necessary, the root of the tree is updated (e.g., if it was the root
-    which was deleted).
-
-    Returns True if the value was successfully deleted, False if it wasn't found
-    in the BST.
+    Returns a tuple consisting of the root of the tree (possibly changed), and
+    a boolean indicating whether a node with the given value was deleted or not.
     """
+    # XXXX: FIXME
     self._root, result = self.__delete(value, self._root)
     return result
 
